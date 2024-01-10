@@ -27,16 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent_list = new Intent(MainActivity.this, ListActivity.class);
 
-        btnSimpan.setOnClickListener(new View.OnClickListener()
-        {
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String isian_nama_depan = edNamaDepan.getText().toString();
                 String isian_nama_belakang = edNamaBelakang.getText().toString();
                 String isian_umur = edUmur.getText().toString();
 
-                if (isian_nama_depan.isEmpty() || isian_umur.isEmpty())
-                {
+                if (isian_nama_depan.isEmpty() || isian_umur.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Isian masih kosong", Toast.LENGTH_SHORT).show();
                 } else {
                     int umur = Integer.parseInt(isian_umur);
@@ -49,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 1; i <= umur; i++) {
                         daftar_nama.add(i + ". " + nama_lengkap + " - Status: " + kategori_umur);
                     }
+
                     edNamaDepan.setText("");
                     edNamaBelakang.setText("");
                     edUmur.setText("");
